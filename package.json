@@ -10,6 +10,9 @@
   },
   "author": "\"Sharad Kumar Mishra\"",
   "license": "ISC",
+  "engines": {
+    "node": "18.17.0"
+  },
   "dependencies": {
     "cloudinary": "^1.37.3",
     "connect-flash": "^0.1.1",
