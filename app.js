@@ -1,6 +1,7 @@
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
+
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -22,9 +23,10 @@ const {
   scriptSrcUrls,
 } = require("./utils/securityFeatures");
 const mongoSanitize = require("express-mongo-sanitize");
-const dbUrl = "mongodb://127.0.0.1:27017/yelp-camp";
+const dbUrl = process.env.DB_URL || "mongodb://127.0.0.1:27017/yelp-camp";
+// || "mongodb://127.0.0.1:27017/yelp-camp"
 const PORT = process.env.PORT || 8080;
-const secret = process.env.SECRET || "thisisnotabettersecret";
+const secret = process.env.SECRET || "ThisShouldBeBetterSecret";
 const store = MongoDBStore.create({
   mongoUrl: dbUrl,
   touchAfter: 24 * 60 * 60,
@@ -59,10 +61,14 @@ const userRoutes = require("./routes/users");
 async function main() {
   await mongoose.connect(dbUrl);
   console.log("Connected to the database yelp-camp");
+  app.listen(PORT, () => {
+    console.log("Listening to Port Number " + PORT);
+  });
 }
 main().catch((err) => console.log(err));
 
 // Setting the path engine
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
@@ -128,8 +134,4 @@ app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;
   if (!err.message) err.message = "Oh No something went Wrong!!!!";
   res.status(statusCode).render("error.ejs", { err });
-});
-
-app.listen(PORT, () => {
-  console.log("Listening to Port Number " + PORT);
 });

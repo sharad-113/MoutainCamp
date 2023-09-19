@@ -12,7 +12,13 @@ const getGeometricLocation = async (BASE_URL) => {
 };
 
 module.exports.index = async (req, res) => {
-  const campgrounds = await Campground.find({});
+  const { q } = req.query;
+  let campgrounds;
+  if (q) {
+    campgrounds = await Campground.find({ location: { $regex: q } });
+  } else {
+    campgrounds = await Campground.find({});
+  }
   res.render("campgrounds/index.ejs", { campgrounds });
 };
 
