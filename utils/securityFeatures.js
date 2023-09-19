@@ -1,6 +1,7 @@
 const scriptSrcUrls = [
   "https://api.maptiler.com",
   "https://api.maptiler.com/fonts",
+  "https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
   "https://unpkg.com/maplibre-gl@3.1.0/dist/maplibre-gl.css",
   "https://unpkg.com/maplibre-gl@3.1.0/dist/maplibre-gl.js",
   "https://maplibre.org/",
@@ -19,6 +20,7 @@ const styleSrcUrls = [
   "https://unpkg.com/maplibre-gl@3.1.0/dist/maplibre-gl.css",
   "https://unpkg.com/maplibre-gl@3.1.0/dist/maplibre-gl.js",
   "https://maplibre.org/",
+  "https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
   "https://api.maptiler.com/tiles/v3/tiles.json",
   "https://kit-free.fontawesome.com/",
   "https://stackpath.bootstrapcdn.com/",
@@ -31,6 +33,7 @@ const styleSrcUrls = [
 const connectSrcUrls = [
   "https://api.maptiler.com/fonts",
   "https://api.maptiler.com",
+  "https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
   "https://unpkg.com/maplibre-gl@3.1.0/dist/maplibre-gl.css",
   "https://api.maptiler.com/tiles/v3/tiles.json",
   "https://unpkg.com/maplibre-gl@3.1.0/dist/maplibre-gl.js",
