@@ -110,7 +110,6 @@ app.use(
         "data:",
         "https://res.cloudinary.com/dqcyb70r6/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
         "https://images.unsplash.com/",
-        "https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
       ],
       fontSrc: ["'self'", ...fontSrcUrls],
     },

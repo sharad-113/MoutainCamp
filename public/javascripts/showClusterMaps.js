@@ -21,9 +21,9 @@ const style = {
 
 const map = new maplibregl.Map({
   container: "map",
-  style:
-    "https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
-  // style: style,
+  // style:
+  //   "https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
+  style: style,
   center: [-103.59179687498357, 40.66995747013945],
   zoom: 3,
 });
@@ -73,8 +73,8 @@ map.on("load", function () {
     filter: ["has", "point_count"],
     layout: {
       "text-field": "{point_count_abbreviated}",
-      "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-      // "text-font": ["Barlow Regular"],
+      // "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+      "text-font": ["Barlow Regular"],
       "text-size": 12,
     },
   });
